@@ -1,0 +1,138 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/zamu/Scrivania/Develop/LinqTest/Model/Model.csproj": {}
+  },
+  "projects": {
+    "/home/zamu/Scrivania/Develop/LinqTest/Commonality.Dto/Commonality.Dto.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/zamu/Scrivania/Develop/LinqTest/Commonality.Dto/Commonality.Dto.csproj",
+        "projectName": "Commonality.Dto",
+        "projectPath": "/home/zamu/Scrivania/Develop/LinqTest/Commonality.Dto/Commonality.Dto.csproj",
+        "packagesPath": "/home/zamu/.nuget/packages/",
+        "outputPath": "/home/zamu/Scrivania/Develop/LinqTest/Commonality.Dto/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/zamu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/zamu/Scrivania/Develop/LinqTest/Model/Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/zamu/Scrivania/Develop/LinqTest/Model/Model.csproj",
+        "projectName": "Model",
+        "projectPath": "/home/zamu/Scrivania/Develop/LinqTest/Model/Model.csproj",
+        "packagesPath": "/home/zamu/.nuget/packages/",
+        "outputPath": "/home/zamu/Scrivania/Develop/LinqTest/Model/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/zamu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/zamu/Scrivania/Develop/LinqTest/Commonality.Dto/Commonality.Dto.csproj": {
+                "projectPath": "/home/zamu/Scrivania/Develop/LinqTest/Commonality.Dto/Commonality.Dto.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
