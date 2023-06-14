@@ -32,7 +32,7 @@ import { PatientListComponent } from './patient-list/patient-list.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'patient', component: PatientComponent },
+      { path: 'patient', component: PatientsContainerComponent },
     ])
   ],
   providers: [],

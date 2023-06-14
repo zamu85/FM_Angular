@@ -8,17 +8,20 @@ import { Paziente } from 'src/models/patient/patient.model';
 })
 
 export class PatientsContainerComponent implements OnInit {
-  pazienti: Paziente[];
+  listaPazienti: Paziente[];
 
   constructor() { 
-    this.pazienti = [
-      new Paziente('Zamuner', 'Riccardo', new Date("1985-08-25")),
-      new Paziente('Zamuner', 'Lorenzo', new Date("2021-05-07")),
-      new Paziente('Zanchi', 'Marta', new Date("1985-01-11")),
+    this.listaPazienti = [
+      new Paziente(1, 'Zamuner', 'Riccardo', new Date("1985-08-25")),
+      new Paziente(2, 'Zamuner', 'Lorenzo', new Date("2021-05-07")),
+      new Paziente(3, 'Zanchi', 'Marta', new Date("1985-01-11")),
     ];
   }
 
   ngOnInit(): void {
   }
 
+  patientWasSelected(p: Paziente): void {
+    console.log('Paziente selezionato: ', p);
+  }
 }

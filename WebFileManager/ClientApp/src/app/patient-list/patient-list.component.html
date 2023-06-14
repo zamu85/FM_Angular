@@ -1,1 +1,8 @@
-<p>patient-list works!</p>
+<div class="ui items">
+  <patient
+      *ngFor="let p of listaPazienti"
+      [paziente]="p"
+      (click)='clicked(p)'
+      [class.selected]="isSelected(p)"
+      ></patient>
+</div>
