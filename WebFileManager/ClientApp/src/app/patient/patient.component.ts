@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-patient',
+  selector: 'patient',
   templateUrl: './patient.component.html',
   styleUrls: ['./patient.component.css']
 })
-export class PatientComponent implements OnInit {
 
-  constructor() { }
+export class PatientComponent implements OnInit {
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

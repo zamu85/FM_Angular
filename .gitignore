@@ -24,7 +24,7 @@ Insights
     Settings
 
 Beta Try the new code view
-ParallelQueue/.gitignore
+FM_Angular/.gitignore
 @zamu85
 zamu85 Create .gitignore
 Latest commit 8e45108 Apr 5, 2023
@@ -364,6 +364,8 @@ ASALocalRun/
 # MSBuild Binary and Structured Log
 *.binlog
 
+*.angular
+
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
 
@@ -397,4 +399,4 @@ Footer navigation
     Blog
     About
 
-ParallelQueue/.gitignore at main · zamu85/ParallelQueue
+FM_Angular/.gitignore at main · zamu85/FM_Angular
