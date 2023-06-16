@@ -3,9 +3,7 @@
         <h1>Elenco pazienti</h1>
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new">Add</button>
-            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new">Edit</button>
-            <button type="button" class="btn btn-primary">Remove</button> -->
-
+            
             <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -21,11 +19,11 @@
     <patients-list [listaPazienti]="listaPazienti" (onPatientSelected)="patientWasSelected($event)"></patients-list>
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="new" aria-hidden="true">
+    <div class="modal fade" id="new" tabindex="-1" aria-labelledby="new" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New patient</h5>
+                    <h5 class="modal-title" id="newLabel">New patient</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
