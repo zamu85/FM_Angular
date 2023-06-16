@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wleK5+oKK3fMIhDeA8pL/ewQnU8SNQQrcBbOBDBImftKvz2t7bQ6dESv2q3u7pZAFmCF3EK3RMrtELZN2G0ioQ==",
+  "dgSpecHash": "MmZ7Vm6hFEGALelqFMElgvDP/b7cpt7RAlWwAcPhxXuWNT/Bwdbbyr2Oq073a860srbmfblcBP+V1LQYIZ/v4A==",
   "success": true,
-  "projectFilePath": "/home/zamu/Scrivania/Develop/LinqTest/Model/Model.csproj",
-  "expectedPackageFiles": [
-    "/home/zamu/.nuget/packages/microsoft.netcore.app.ref/6.0.14/microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
-    "/home/zamu/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.14/microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512"
-  ],
+  "projectFilePath": "s:\\TestBeforeImplementation\\GitHubRepos\\CSharp\\FM_Angular\\Model\\Model.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

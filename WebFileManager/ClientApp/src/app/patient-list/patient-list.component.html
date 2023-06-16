@@ -1,8 +1,55 @@
 <div class="ui items">
-  <patient
-      *ngFor="let p of listaPazienti"
-      [paziente]="p"
-      (click)='clicked(p)'
-      [class.selected]="isSelected(p)"
-      ></patient>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nominativo</th>
+        <th scope="col">Data di nascita</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of listaPazienti" (click)='clicked(p)' [class.table-primary]="isSelected(p)">
+        <th scope="row">{{p.id}}</th>
+        <td>{{p.nome}} {{p.cognome}}</td>
+        <td>{{p?.dataNascita | date:'short'}}</td>
+        <td>
+
+          <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="bi bi-three-dots-vertical"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit">Edit</a></li>
+              <li><a class="dropdown-item" href="#">Remove</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Set marker to read</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="edit" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModal">Edit patient {{pazienteSelezionato?.nome }} {{pazienteSelezionato?.cognome}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <patient></patient>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

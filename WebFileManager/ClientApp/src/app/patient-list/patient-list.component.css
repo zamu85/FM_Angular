@@ -1,0 +1,10 @@
+tr {
+  cursor: pointer;  
+}
+
+.dropdown-toggle::after {
+    content: "";
+    border-top: 0px;
+    display: none;
+}
+

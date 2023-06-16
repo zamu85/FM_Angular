@@ -10,7 +10,7 @@ export class PatientListComponent implements OnInit {
   @Input() listaPazienti: Paziente[] | undefined;
   @Output() onPatientSelected: EventEmitter<Paziente>;
 
-  private pazienteSelezionato: Paziente | undefined;
+  public pazienteSelezionato: Paziente | undefined;
   
   constructor() {
     this.onPatientSelected = new EventEmitter();
