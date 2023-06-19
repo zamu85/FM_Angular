@@ -29,7 +29,7 @@ import { PatientListComponent } from './patient-list/patient-list.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', component: PatientsContainerComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'patient', component: PatientsContainerComponent },
