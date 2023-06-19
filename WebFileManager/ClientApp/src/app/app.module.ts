@@ -12,6 +12,14 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { PatientComponent } from './patient/patient.component';
 import { PatientsContainerComponent } from './patients-container/patients-container.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
+import { ExamsContainerComponent } from './exams-container/exams-container.component';
+import { ExamsListComponent } from './exams-list/exams-list.component';
+import { ExamComponent } from './exam/exam.component';
+import { FilesListComponent } from './files-list/files-list.component';
+import { FileComponent } from './file/file.component';
+import { ResourcesContainerComponent } from './resources-container/resources-container.component';
+import { ResourcesListComponent } from './resources-list/resources-list.component';
+import { ResourceComponent } from './resource/resource.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +30,15 @@ import { PatientListComponent } from './patient-list/patient-list.component';
     FetchDataComponent,
     PatientComponent,
     PatientsContainerComponent,
-    PatientListComponent
+    PatientListComponent,
+    ExamsContainerComponent,
+    ExamsListComponent,
+    ExamComponent,
+    FilesListComponent,
+    FileComponent,
+    ResourcesContainerComponent,
+    ResourcesListComponent,
+    ResourceComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
