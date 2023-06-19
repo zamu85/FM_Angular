@@ -20,6 +20,7 @@ import { FileComponent } from './file/file.component';
 import { ResourcesContainerComponent } from './resources-container/resources-container.component';
 import { ResourcesListComponent } from './resources-list/resources-list.component';
 import { ResourceComponent } from './resource/resource.component';
+import { SettingsContainerComponent } from './settings-container/settings-container.component';
 
 @NgModule({
   declarations: [
@@ -46,9 +47,10 @@ import { ResourceComponent } from './resource/resource.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: PatientsContainerComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'patient', component: PatientsContainerComponent },
+      { path: 'resources', component: ResourcesContainerComponent },
+      { path: 'exams', component: ExamsContainerComponent },
+      { path: 'settings', component: SettingsContainerComponent },
     ])
   ],
   providers: [],
