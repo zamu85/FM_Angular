@@ -1,7 +1,7 @@
 <div class="patients-container">
-    <div class="header">
-        <h1>Current resource: TestAcqSpe</h1>
-        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <div class="header">
+    <h1>Current resource: TestAcqSpe</h1>
+    <!-- <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new">Add</button>
             
             <div class="btn-group" role="group">
@@ -14,29 +14,45 @@
                     <li><a class="dropdown-item" href="#">EMG</a></li>
                 </ul>
             </div>
+        </div> -->
+  </div>
+  <patients-list
+    [listaPazienti]="listaPazienti"
+    (onPatientSelected)="patientWasSelected($event)"
+  ></patients-list>
+
+  <div
+    class="modal fade"
+    id="new"
+    tabindex="-1"
+    aria-labelledby="new"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newLabel">New patient</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
-    </div>
-    <patients-list [listaPazienti]="listaPazienti" (onPatientSelected)="patientWasSelected($event)"></patients-list>
-
-
-    <div class="modal fade" id="new" tabindex="-1" aria-labelledby="new" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="newLabel">New patient</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <patient></patient>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
+        <div class="modal-body">
+          <patient></patient>
         </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
-
-
-
+  </div>
 </div>

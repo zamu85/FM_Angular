@@ -1,51 +1,156 @@
 <header>
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span>
+          <img
+            src="assets/images/FileManager_Blue-2022.ico"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+        </span>
       </button>
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="assets/images/FileManager_Blue-2022.ico"
-              alt="Logo" width="30" height="30" class="d-inline-block align-text-top" />
-            WebFileManager</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <img
+              src="assets/images/FileManager_Blue-2022.ico"
+              alt="Logo"
+              width="30"
+              height="30"
+              class="d-inline-block align-text-top"
+            />
+            WebFileManager
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            
-              <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+              <li
+                class="nav-item"
+                [routerLinkActive]="['link-active']"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
                 <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
               </li>
-            
+
               <li class="nav-item" [routerLinkActive]="['link-active']">
-                <a class="nav-link text-dark" [routerLink]="['/patient']">Pazienti</a>
+                <a class="nav-link text-dark" [routerLink]="['/patient']"
+                  >Pazienti</a
+                >
               </li>
               <li class="nav-item" [routerLinkActive]="['link-active']">
-                <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Workflow</a>
+                <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
+                  >Workflow</a
+                >
               </li>
               <li class="nav-item" [routerLinkActive]="['link-active']">
-                <a class="nav-link text-dark" [routerLink]="['/resources']">Resources</a>
+                <a class="nav-link text-dark" [routerLink]="['/resources']"
+                  >Resources</a
+                >
               </li>
               <li class="nav-item" [routerLinkActive]="['link-active']">
-                <a class="nav-link text-dark" [routerLink]="['/settings']">Setting</a>
+                <a class="nav-link text-dark" [routerLink]="['/settings']"
+                  >Setting</a
+                >
               </li>
             </ul>
-
           </ul>
         </div>
       </div>
-      
-      <a class="navbar-brand" [routerLink]="['/']">
-        <img src="assets/images/FileManager_Blue-2022.ico" alt="Logo" width="30" height="30"
-          class="d-inline-block align-text-top" />
-        WebFileManager
-      </a>
+
+      <!-- <div style="display: flex; flex-direction: row;"> -->
+
+      <div style="display: flex; flex-direction: row; align-items: center">
+        <h1>WebFileManager</h1>
+      </div>
+
+      <div>
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn dropdown-toggle"
+            data-bs-toggle="dropdown"
+            data-bs-display="static"
+            aria-expanded="false"
+          >
+            Current resource: TestAcqSpe
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item active" href="#">
+                <div class="resource_details_container">
+                  <div class="resource_img">
+                    <img src="assets/images/database.png" />
+                  </div>
+                  <div class="resource_description">
+                    Resource name: Test AcqSpe
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <div class="resource_details_container">
+                  <div class="resource_img">
+                    <img src="assets/images/database.png" />
+                  </div>
+                  <div class="resource_description">Resource name: FM_Mock</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <div class="resource_details_container">
+                  <div class="resource_img">
+                    <img src="assets/images/database.png" />
+                  </div>
+                  <div class="resource_description">
+                    Resource name: FileManager
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <div class="resource_details_container">
+                  <div class="resource_img">
+                    <img src="assets/images/database.png" />
+                  </div>
+                  <div class="resource_description">
+                    <p>Resource name: FileManager</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </nav>
-
 
   <!-- <nav
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 bg-body-tertiary">
