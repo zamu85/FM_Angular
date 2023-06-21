@@ -4,22 +4,35 @@ import { Paziente } from 'src/models/patient/patient.model';
 @Component({
   selector: 'patients-container',
   templateUrl: './patients-container.component.html',
-  styleUrls: ['./patients-container.component.css']
+  styleUrls: ['./patients-container.component.css'],
 })
-
 export class PatientsContainerComponent implements OnInit {
   listaPazienti: Paziente[];
 
-  constructor() { 
+  constructor() {
     this.listaPazienti = [
-      new Paziente(1, 'Zamuner', 'Riccardo', new Date("1985-08-25")),
-      new Paziente(2, 'Zamuner', 'Lorenzo', new Date("2021-05-07")),
-      new Paziente(3, 'Zanchi', 'Marta', new Date("1985-01-11")),
+      new Paziente({
+        id: 1,
+        cognome: 'Zamuner',
+        nome: 'Riccardo',
+        dataNascita: new Date('1985-08-25'),
+      }),
+      new Paziente({
+        id: 2,
+        cognome: 'Zamuner',
+        nome: 'Lorenzo',
+        dataNascita: new Date('2021-07-05'),
+      }),
+      new Paziente({
+        id: 3,
+        cognome: 'Zanchi',
+        nome: 'Marta',
+        dataNascita: new Date('1985-01-11'),
+      }),
     ];
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   patientWasSelected(p: Paziente): void {
     console.log('Paziente selezionato: ', p);

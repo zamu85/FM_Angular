@@ -1,17 +1,15 @@
-export class File
-{
-    id: number;
-    fileType: number;
-    recordingDate: Date;
-    comment: string;
-    location: string;
+export class File {
+  id: number;
+  fileType: number;
+  recordingDate: Date;
+  comment: string;
+  location: string;
 
-    constructor(id: number, fileType: number, recordingDate: Date, comment: string, location: string)
-    {
-        this.id = id;
-        this.comment = comment;
-        this.fileType = fileType;
-        this.recordingDate = recordingDate;
-        this.location = location;
-    }
+  constructor(file: any) {
+    this.id = (file && file.id) || null;
+    this.comment = (file && file.comment) || null;
+    this.fileType = (file && file.fileType) || null;
+    this.recordingDate = (file && file.recordingDate) || null;
+    this.location = (file && file.location) || null;
+  }
 }

@@ -4,10 +4,10 @@ export class Paziente {
   dataNascita: Date;
   id: number;
 
-  constructor(id: number, cognome: string, nome: string, dataNascita: Date) {
-    this.cognome = cognome;
-    this.nome = nome;
-    this.dataNascita = dataNascita;
-    this.id = id;
+  constructor(patient: any) {
+    this.cognome = (patient && patient.cognome) || null;
+    this.nome = (patient && patient.nome) || null;
+    this.dataNascita = (patient && patient.dataNascita) || null;
+    this.id = (patient && patient.id) || null;
   }
 }

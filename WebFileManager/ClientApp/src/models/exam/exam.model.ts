@@ -1,18 +1,17 @@
 export class Esame {
-    id: number;
-    examType: number;
-    studyType: number;
-    recordingDate: Date;
-    comment: string;
-    marker: string;
+  id: number;
+  examType: number;
+  studyType: number;
+  recordingDate: Date;
+  comment: string;
+  marker: string;
 
-    constructor(id: number, examType: number, studyType: number, recordingDate: Date, comment: string, marker: string)
-    {
-        this.id = id;
-        this.examType = examType;
-        this.studyType = studyType;
-        this.recordingDate = recordingDate;
-        this.comment = comment;
-        this.marker = marker;
-    }
+  constructor(exam: any) {
+    this.id = (exam && exam.id) || null;
+    this.examType = (exam && exam.examType) || null;
+    this.studyType = (exam && exam.studyType) || null;
+    this.recordingDate = (exam && exam.recordingDate) || null;
+    this.comment = (exam && exam.comment) || null;
+    this.marker = (exam && exam.marker) || null;
+  }
 }
