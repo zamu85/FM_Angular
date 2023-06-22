@@ -21,6 +21,7 @@ import { ResourcesContainerComponent } from './resources-container/resources-con
 import { ResourcesListComponent } from './resources-list/resources-list.component';
 import { ResourceComponent } from './resource/resource.component';
 import { SettingsContainerComponent } from './settings-container/settings-container.component';
+import { PatientService } from './services/patient/patientService';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { SettingsContainerComponent } from './settings-container/settings-contai
     FileComponent,
     ResourcesContainerComponent,
     ResourcesListComponent,
-    ResourceComponent
+    ResourceComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -51,9 +52,9 @@ import { SettingsContainerComponent } from './settings-container/settings-contai
       { path: 'resources', component: ResourcesContainerComponent },
       { path: 'exams', component: ExamsContainerComponent },
       { path: 'settings', component: SettingsContainerComponent },
-    ])
+    ]),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PatientService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

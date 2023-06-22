@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Paziente } from 'src/models/patient/patient.model';
+import { PatientService } from '../services/patient/patientService';
 
 @Component({
   selector: 'patients-container',
@@ -7,10 +8,10 @@ import { Paziente } from 'src/models/patient/patient.model';
   styleUrls: ['./patients-container.component.css'],
 })
 export class PatientsContainerComponent implements OnInit {
-  listaPazienti: Paziente[];
+  listaPazienti: Paziente[] = [];
 
-  constructor() {
-    this.listaPazienti = [
+  constructor(private patientService: PatientService) {
+    /*this.listaPazienti = [
       new Paziente({
         id: 1,
         cognome: 'Zamuner',
@@ -29,10 +30,14 @@ export class PatientsContainerComponent implements OnInit {
         nome: 'Marta',
         dataNascita: new Date('1985-01-11'),
       }),
-    ];
+    ];*/
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.patientService.getPatientList().subscribe((response) => {
+      this.listaPazienti = response;
+    });
+  }
 
   patientWasSelected(p: Paziente): void {
     console.log('Paziente selezionato: ', p);
