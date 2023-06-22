@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Paziente } from 'src/models/patient/patient.model';
+import { Patient } from 'src/models/patient/patient.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,18 @@ export class PatientService {
     @Inject('BASE_URL') private baseUrl: string
   ) {}
 
-  getPatientList(): Observable<Paziente[]> {
-    return this.http.get<Paziente[]>(this.baseUrl + 'pazienti/getpatients');
+  getPatientList(): Observable<Patient[]> {
+    /*return this.http
+      .get<Paziente[]>(this.baseUrl + 'pazienti/getpatients')
+      .pipe(map((response) => new Paziente(response)));*/
+    return this.http
+      .get<Array<Patient>>(this.baseUrl + 'pazienti/getpatients')
+      .pipe(
+        map((response: Patient[]) => {
+          console.log(response);
+
+          return response as Array<Patient>;
+        })
+      );
   }
 }

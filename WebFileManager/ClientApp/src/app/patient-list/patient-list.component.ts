@@ -1,35 +1,33 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Paziente } from 'src/models/patient/patient.model';
+import { Patient } from 'src/models/patient/patient.model';
 
 @Component({
   selector: 'patients-list',
   templateUrl: './patient-list.component.html',
-  styleUrls: ['./patient-list.component.css']
+  styleUrls: ['./patient-list.component.css'],
 })
 export class PatientListComponent implements OnInit {
-  @Input() listaPazienti: Paziente[] | undefined;
-  @Output() onPatientSelected: EventEmitter<Paziente>;
+  @Input() listaPazienti: Patient[] | undefined;
+  @Output() onPatientSelected: EventEmitter<Patient>;
 
-  public pazienteSelezionato: Paziente | undefined;
-  
+  public selectedPatient: Patient | undefined;
+
   constructor() {
     this.onPatientSelected = new EventEmitter();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  clicked(p: Paziente): void {
-    this.pazienteSelezionato = p;
+  clicked(p: Patient): void {
+    this.selectedPatient = p;
     this.onPatientSelected.emit(p);
   }
 
-  isSelected(p: Paziente): boolean {
-    if (!p || !this.pazienteSelezionato) {
+  isSelected(p: Patient): boolean {
+    if (!p || !this.selectedPatient) {
       return false;
     }
 
-    return p.id === this.pazienteSelezionato.id;
+    return p.patientId === this.selectedPatient.patientId;
   }
-
 }

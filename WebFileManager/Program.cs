@@ -1,24 +1,25 @@
-using System;
-using System.Runtime.InteropServices;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
-using Microsoft.OpenApi.Models;
 
-
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddDbContextFactory<PatientContext>(options =>
+builder.Services
+    .AddCors(
+        opt => opt.AddDefaultPolicy(
+            b =>
             {
-                options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"),
-                    o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
-            });
+                b.WithOrigins("https://localhost:44473").AllowAnyHeader().AllowAnyMethod();
+            }));
 
-var app = builder.Build();
+builder.Services
+    .AddDbContextFactory<PatientContext>(
+        options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"), o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
+
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -37,10 +38,13 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseCors(
+    builder => builder
+    .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader());
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
+app.MapControllerRoute(name: "default", pattern: "{controller}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
 

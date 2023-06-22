@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Paziente } from 'src/models/patient/patient.model';
+import { Patient } from 'src/models/patient/patient.model';
 import { PatientService } from '../services/patient/patientService';
 
 @Component({
@@ -8,7 +8,7 @@ import { PatientService } from '../services/patient/patientService';
   styleUrls: ['./patients-container.component.css'],
 })
 export class PatientsContainerComponent implements OnInit {
-  listaPazienti: Paziente[] = [];
+  listaPazienti: Array<Patient> = [];
 
   constructor(private patientService: PatientService) {
     /*this.listaPazienti = [
@@ -34,12 +34,17 @@ export class PatientsContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.patientService.getPatientList().subscribe((response) => {
-      this.listaPazienti = response;
+    this.patientService.getPatientList().subscribe({
+      next: (v) => {
+        console.log(v);
+        v.map((p) => this.listaPazienti.push(p));
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete'),
     });
   }
 
-  patientWasSelected(p: Paziente): void {
+  patientWasSelected(p: Patient): void {
     console.log('Paziente selezionato: ', p);
   }
 }
