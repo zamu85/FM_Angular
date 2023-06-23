@@ -26,14 +26,15 @@ export class PatientComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-    if (changes['paziente']) {
-      this.patientForm.get('firstName')?.setValue(this.paziente?.firstName);
-      this.patientForm.get('lastName')?.setValue(this.paziente?.lastName);
-    }
+    // console.log(changes);
+    // if (changes['paziente']) {
+    //   this.patientForm.get('firstName')?.setValue(this.paziente?.firstName);
+    //   this.patientForm.get('lastName')?.setValue(this.paziente?.lastName);
+    // }
   }
 
   ngOnInit(): void {
+    console.log('----------------', this.paziente);
     // this.patientForm = this.fb.group({
     //   fistName: this.fb.control(this.paziente?.firstName),
     //   lastName: this.fb.control(this.paziente?.lastName),

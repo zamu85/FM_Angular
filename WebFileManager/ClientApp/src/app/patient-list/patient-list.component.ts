@@ -35,8 +35,8 @@ export class PatientListComponent implements OnInit {
     return p.patientId === this.selectedPatient.patientId;
   }
 
-  open(content) {
-    this.modalService
+  open() {
+    /*this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title' })
       .result.then(
         (result) => {
@@ -45,7 +45,11 @@ export class PatientListComponent implements OnInit {
         (reason) => {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
         }
-      );
+      );*/
+    const modalRef = this.modalService.open(PatientComponent, {
+      ariaLabelledBy: 'modal-basic-title',
+    });
+    modalRef.componentInstance.paziente = this.selectedPatient;
   }
 
   private getDismissReason(reason: any): string {

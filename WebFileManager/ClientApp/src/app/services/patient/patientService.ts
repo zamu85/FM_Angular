@@ -12,9 +12,6 @@ export class PatientService {
   ) {}
 
   getPatientList(): Observable<Patient[]> {
-    /*return this.http
-      .get<Paziente[]>(this.baseUrl + 'pazienti/getpatients')
-      .pipe(map((response) => new Paziente(response)));*/
     return this.http
       .get<Array<Patient>>(this.baseUrl + 'pazienti/getpatients')
       .pipe(
