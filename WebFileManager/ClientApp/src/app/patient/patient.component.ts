@@ -1,12 +1,6 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  Output,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, OnInit, Input, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Patient } from 'src/models/patient/patient.model';
 
 @Component({
@@ -14,30 +8,27 @@ import { Patient } from 'src/models/patient/patient.model';
   templateUrl: './patient.component.html',
   styleUrls: ['./patient.component.css'],
 })
-export class PatientComponent implements OnInit, OnChanges {
-  @Input() paziente: Patient | undefined;
+export class PatientComponent implements OnInit {
+  @Input() patient: Patient | undefined;
+
   patientForm: FormGroup;
 
-  constructor() {
+  constructor(public activeModal: NgbActiveModal) {
     this.patientForm = new FormGroup({
-      firstName: new FormControl(this.paziente?.firstName),
-      lastName: new FormControl(this.paziente?.lastName),
+      firstName: new FormControl(this.patient?.firstName),
+      lastName: new FormControl(this.patient?.lastName),
     });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    // console.log(changes);
-    // if (changes['paziente']) {
-    //   this.patientForm.get('firstName')?.setValue(this.paziente?.firstName);
-    //   this.patientForm.get('lastName')?.setValue(this.paziente?.lastName);
-    // }
+  getBackInfo() {
+    if (this.patientForm.dirty) {
+      console.log(this.patientForm);
+      this.activeModal.close(this.patientForm.value);
+    }
   }
-
   ngOnInit(): void {
-    console.log('----------------', this.paziente);
-    // this.patientForm = this.fb.group({
-    //   fistName: this.fb.control(this.paziente?.firstName),
-    //   lastName: this.fb.control(this.paziente?.lastName),
-    // });
+    console.log('----------------', this.patient);
+    this.patientForm.get('firstName')?.setValue(this.patient?.firstName);
+    this.patientForm.get('lastName')?.setValue(this.patient?.lastName);
   }
 }

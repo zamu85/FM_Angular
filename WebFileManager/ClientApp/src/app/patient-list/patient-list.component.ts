@@ -46,10 +46,11 @@ export class PatientListComponent implements OnInit {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
         }
       );*/
-    const modalRef = this.modalService.open(PatientComponent, {
-      ariaLabelledBy: 'modal-basic-title',
+    const modalRef = this.modalService.open(PatientComponent);
+    modalRef.componentInstance.patient = this.selectedPatient;
+    modalRef.result.then((newData: any) => {
+      console.log(newData);
     });
-    modalRef.componentInstance.paziente = this.selectedPatient;
   }
 
   private getDismissReason(reason: any): string {

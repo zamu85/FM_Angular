@@ -22,6 +22,7 @@ import { ResourcesListComponent } from './resources-list/resources-list.componen
 import { ResourceComponent } from './resource/resource.component';
 import { SettingsContainerComponent } from './settings-container/settings-container.component';
 import { PatientService } from './services/patient/patientService';
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { PatientService } from './services/patient/patientService';
       { path: 'settings', component: SettingsContainerComponent },
     ]),
   ],
-  providers: [PatientService],
+  providers: [PatientService, NgbActiveModal],
   bootstrap: [AppComponent],
   entryComponents: [PatientComponent],
 })
