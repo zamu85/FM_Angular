@@ -400,3 +400,5 @@ Footer navigation
     About
 
 FM_Angular/.gitignore at main · zamu85/FM_Angular
+WebFileManager/patient.db-shm
+WebFileManager/patient.db-wal
