@@ -57,5 +57,6 @@ import { PatientService } from './services/patient/patientService';
   ],
   providers: [PatientService],
   bootstrap: [AppComponent],
+  entryComponents: [PatientComponent],
 })
 export class AppModule {}

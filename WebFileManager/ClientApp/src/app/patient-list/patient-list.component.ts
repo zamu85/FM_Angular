@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Patient } from 'src/models/patient/patient.model';
+import { PatientComponent } from '../patient/patient.component';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'patients-list',
@@ -10,9 +12,11 @@ export class PatientListComponent implements OnInit {
   @Input() listaPazienti: Patient[] | undefined;
   @Output() onPatientSelected: EventEmitter<Patient>;
 
+  closeResult = '';
+
   public selectedPatient: Patient | undefined;
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
     this.onPatientSelected = new EventEmitter();
   }
 
@@ -29,5 +33,28 @@ export class PatientListComponent implements OnInit {
     }
 
     return p.patientId === this.selectedPatient.patientId;
+  }
+
+  open(content) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }
